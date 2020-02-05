@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/home.css' %}">
+    <title>Recipes</title>
+
+</head>
+
+<body>
+    <h1>Find your favorite recipes here</h1>
+    <a id="myBtn"><p class="surf_button">Start Browsing here</p></a>
+    
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Proceed</h2>
+    </div>
+    <div class="modal-body">
+      <a href="accounts/login"><p>Login</p></a>
+      <a href="accounts/register"><p>Sign-Up</p></a>
+    </div>
+  </div>
+  <script type="text/javascript" src="{% static 'js/Modal.js' %}" ></script>
+</div>
+</body>
+</html>

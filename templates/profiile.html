@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}">
+    <title>Your Recipes</title>
+</head>
+<body style="background-image: linear-gradient(to right, rgb(34, 20, 116), rgb(255, 0, 234));">
+    <a href="/accounts/logout" style="position: absolute; margin-left : 93%"><Button style="background-color: rgb(29, 31, 190); 
+        color: white; 
+        padding: 14px 20px; 
+        margin: 8px 0; 
+        border: none; 
+        cursor: pointer; ">Logout</Button></a>
+    <h1>
+        Hello, {{request.user}}
+    </h1>
+    {% for rcps in context %}
+    
+    
+    <br><br>
+    <a href="/EditRecipe/edit/{{ rcps.Rname }}" style="width:max-content">
+        <div style="color:floralwhite;background-color : rgba(0,0,0,0.3)" >
+            <table border="0px" style="padding :10px; ">
+            <tr>
+                <td><tr>
+                    <td>Recipe Name</td><td style="padding-left: 10px;">{{ rcps.Rname }}</td>
+                </tr>
+                <tr>
+                    <td>Ingredients</td><td style="padding-left: 10px;">{{rcps.Ingredients}}</td>
+                </tr>
+                <tr>
+                    <td>Steps to follow</td><td style="padding-left: 10px;">{{rcps.steps}}</td>
+                </tr>
+                </tr>
+            </td>
+                <td>
+                    <img src="{{rcps.image.url}}" alt="" width="400px"/>
+                </td>
+                
+        </table>
+        </div>
+    </a>
+    {% endfor %}
+   
+
+</ul>
+</body>
+</html>

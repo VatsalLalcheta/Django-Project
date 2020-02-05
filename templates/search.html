@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/search.css' %}">
+    <title>Search Recipe</title>
+</head>
+<body>
+    <div class='searchBox'>
+        <form action='/Feed/search' method='POST'>
+            {% csrf_token %}
+            <input type="text" placeholder="Search by Recipe name or Ingredients..." name="search_box" />
+            <button  type='submit'>search</button>
+            <p>Back to <a href="/Feed/feed">Feed Page</a></p>
+        </form>
+    </div>
+    <div style="color:rgb(225, 3, 245)">
+        {% if sr %}
+            {% for k in sr %}
+            <a href="/Details/details/{{k.Rname}}/{{k.uname}}">
+            <table border='0px' style="padding: 20px;">
+                <tr>
+                    <td>UserName</td>
+                    <td>{{ k.uname }}</td>
+                </tr>
+                <tr>
+                    <td>Recipe Name</td>
+                    <td>{{ k.Rname }}</td>
+                </tr>
+                <tr>
+                    <td>Ingredients</td>
+                    <td>{{ k.Ingredients }}</td>
+                </tr>
+                <tr>
+                    <td>Image</td>
+                    <td><img src="{{ k.image.url }}" width="400px"></td>
+                </tr>
+            </table>
+        </a> 
+            {% endfor %}
+        {% endif %}
+    </div>
+    
+</body>
+</html>

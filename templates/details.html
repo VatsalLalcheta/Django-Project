@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/login.css' %}">
+    <title>View a recipe</title>
+</head>
+<body >
+    <a href="/accounts/logout" ><button>Logout</button></a>
+    <!-- <a href="/accounts/logout" style="position: absolute; margin-left : 93%">Logout</a> -->
+    <div>
+    <img src="{{context.image.url}}" width='400px'/>
+    <div class="block">
+          <input type="text" placeholder="User Name" value="{{context.uname}}" name='R_name' readonly/><br>
+            <input type="text" placeholder="Recipe name..." value="{{context.Rname}}" name='R_name' readonly/><br>
+            <input type="text" placeholder="Ingredients" value="{{context.Ingredients}}" name='Ingredients' readonly/><br>
+            <textarea placeholder="Steps to follow"  name="steps" readonly>{{context.steps}}</textarea><br>
+            <!-- <input type="file" name="img" /> -->
+        </div> 
+    <div>Return to the <a href="/Feed/feed">Home Page</a></div>
+</div>
+</body>
+</html>

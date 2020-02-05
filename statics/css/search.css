@@ -1,0 +1,40 @@
+input[type = text]{
+    width: 50%;
+    box-sizing: border-box;
+    border : 2px solid #ccc;
+    border-radius : 4px;
+    font-size : 16px;
+    background-color: blue;
+    color: white;   
+}
+
+::placeholder { 
+    color: rgb(219, 210, 210);
+    opacity: 1; 
+  }
+
+body {
+    background-image: linear-gradient(to right, rgb(34, 20, 116), rgb(255, 0, 234));
+}
+
+p {
+  display: inline;
+  color : white;
+}
+
+.left_padded { 
+  margin-left: 20px;
+}
+
+a:visited {
+  color : white;
+}
+
+button { 
+  background-color: rgb(29, 31, 190); 
+  color: white; 
+  padding: 14px 20px; 
+  margin: 8px 0; 
+  border: none; 
+  cursor: pointer;  
+}

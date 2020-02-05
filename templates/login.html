@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/login.css' %}">
+    <title>Log-in</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <div class="block">
+    <form action="login" method="POST">
+      {% csrf_token %}
+      <input type="text" placeholder="UserName" name="user_name"  required/><br>
+      <input type="password" placeholder="Password" name="user_password" required/><br>
+      <button type="submit" >Log-in</button>
+      <a href="/accounts/register" class="Reg">Register</a> 
+    </form>
+  </div> 
+  {%for i in messages %}
+    <p>**{{i}}**</p>
+  {% endfor %}
+</body>
+</html>

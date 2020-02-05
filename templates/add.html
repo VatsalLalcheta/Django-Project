@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/login.css' %}">
+    <title>Add a recipe</title>
+</head>
+<body >
+    <a href="/accounts/logout"><button>Logout</button></a>
+    <h1>Add a recipe</h1>
+    <div class="block">
+        <form action="/Feed/add" method="POST">
+        {% csrf_token %}
+            <input type="text" placeholder="Recipe name..." name='R_name' /><br>
+            <input type="text" placeholder="Ingredients" name='Ingredients' /><br>
+            <input type="file" name="img" />
+            <textarea placeholder="Steps to follow" name="steps" ></textarea>
+        <button type="submit">ADD</button>
+        </form>
+    </div> 
+    <div>Return to the <a href="feed">Home Page</a></div>
+</body>
+</html>
