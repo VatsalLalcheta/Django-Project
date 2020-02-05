@@ -17,3 +17,5 @@ Steps for execution...
 8) You can Edit Your recipes by clicking on the particular recipe on your profile page
 9) You can search for a recipe either using "Recipe name" or "Ingredients" by clicking "SEARCH" on feed page
 10) You can see the recipe details by clicking on one
+
+*I have uploaded all the photos of each step 
